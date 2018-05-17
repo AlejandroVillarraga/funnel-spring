@@ -45,4 +45,4 @@ deployment:
   staging:
     branch: master
     heroku:
-      appname: funnel
+      appname: funnelcol
