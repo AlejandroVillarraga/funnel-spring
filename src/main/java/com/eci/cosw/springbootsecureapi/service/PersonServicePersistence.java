@@ -13,7 +13,7 @@ public class PersonServicePersistence implements PersonService {
 
     @Override
     public Person getUser(String username) {
-        return perrepo.getOne(username);
+        return perrepo.findOne(username);
     }
 
     @Override

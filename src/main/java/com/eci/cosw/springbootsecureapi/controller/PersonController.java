@@ -26,6 +26,12 @@ public class PersonController {
         return new ResponseEntity<>(personService.createPerson(person), HttpStatus.ACCEPTED);
     }
 
+    @CrossOrigin
+    @RequestMapping( value = "/getPerson/{username}", method = RequestMethod.GET )
+    public Person getSite(@PathVariable String username) {
+        return personService.getUser(username);
+    }
+
 
     @CrossOrigin
     @RequestMapping( value = "/login", method = RequestMethod.POST )
