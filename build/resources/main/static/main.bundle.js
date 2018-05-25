@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-toggleable-md  fixed-top \">\n\n  <div class=\"navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"styleLogo\" routerLinkActive=\"/categorys\" routerLink=\"/categorys\" ><img class=\"image\" src=\"/assets/brand/logo.png\" width=\"200\" height=\"70\"></a>\n\n\n      </li>\n      &nbsp;\n      &nbsp;\n      &nbsp;\n\n      <form [formGroup]=\"searchForm\" (ngSubmit)=\"searchSite()\" class=\"form-inline\">\n\n\n        <div class=\"dropdown\">\n\n          <span class=\"styleA\"><img class=\"image\" src=\"/assets/images/location.png\" width=\"19\" height=\"19\">{{textTowns}}</span>\n          <div class=\"dropdown-content\">\n            <a class=\"nav-link\" (click)=\"searchTown(town.name)\"  *ngFor=\"let town of townList\">{{town.name}}</a>\n          </div>\n\n        </div>\n\n        &nbsp;\n        <div class=\"input-group\">\n\n          <input type=\"text\" class=\"form-control\" formControlName=\"inputSearch\" placeholder=\"Buscar\" >\n          <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!searchForm.valid\">Buscar</button>\n        </div>\n      </form>\n    </ul>\n  </div>\n\n  <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">\n    <ul class=\"navbar-nav ml-auto\">\n\n\n    </ul>\n    <ul class=\"navbar-nav ml-auto\">\n\n      <div class=\"dropdown\">\n        <span class=\"styleA\">Categorias</span>\n        <div class=\"dropdown-content\">\n          <a class=\"nav-link\" (click)=\"saveCategory(cl.name)\" routerLinkActive=\"/sites\" routerLink=\"/sites\"  *ngFor=\"let cl of categoryList\">{{cl.name}}</a>\n        </div>\n\n      </div>\n\n      <a  routerLinkActive=\"/contact\" routerLink=\"/contact\"  class=\"styleA\" >¿Eres empresa?</a>\n      <li class=\"nav-item\">\n        <a *ngIf=\"!isLoggedIn()\" routerLinkActive=\"/signin\" routerLink=\"/signin\"  class=\"styleA\" >Ingresa</a>\n      </li>\n      <li class=\"nav-item\">\n        <a *ngIf=\"!isLoggedIn()\" routerLinkActive=\"/signup\" routerLink=\"/signup\"  class=\"styleA\" >Resgistrate</a>\n      </li>\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\n        <a routerLinkActive=\"/categorys\" routerLink=\"/categorys\" class=\"styleA\" (click)=\"signOut()\">Salir</a>\n      </li>\n    </ul>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n<div id=\"mybutton\">\n  <a target=\"_blank\" href=\"https://www.facebook.com/FunnelCol/\" class=\"fa fa-facebook\"></a>\n  <br>\n  <a target=\"_blank\" href=\"https://www.instagram.com/funnelcolombia/\" class=\"fa fa-twitter\"></a>\n  <br>\n  <a target=\"_blank\" href=\"https://www.instagram.com/funnelcolombia/\" class=\"fa fa-instagram\"></a>\n</div>\n\n\n"
+module.exports = "<nav class=\"navbar navbar-toggleable-md  fixed-top \">\n\n  <div class=\"navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"styleLogo\" routerLinkActive=\"/categorys\" routerLink=\"/categorys\" ><img class=\"image\" src=\"/assets/brand/logo.png\" width=\"200\" height=\"70\"></a>\n\n\n      </li>\n      &nbsp;\n      &nbsp;\n      &nbsp;\n\n      <form [formGroup]=\"searchForm\" (ngSubmit)=\"searchSite()\" class=\"form-inline\">\n\n\n        <div class=\"dropdown\">\n\n          <span class=\"styleA\"><img class=\"image\" src=\"/assets/images/location.png\" width=\"19\" height=\"19\">{{textTowns}}</span>\n          <div class=\"dropdown-content\">\n            <a class=\"nav-link\" (click)=\"searchTown(town.name)\"  *ngFor=\"let town of townList\">{{town.name}}</a>\n          </div>\n\n        </div>\n\n        &nbsp;\n        <div class=\"input-group\">\n\n          <input type=\"text\" class=\"form-control\" formControlName=\"inputSearch\" placeholder=\"Buscar\" >\n          <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!searchForm.valid\">Buscar</button>\n        </div>\n      </form>\n    </ul>\n  </div>\n\n  <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">\n    <ul class=\"navbar-nav ml-auto\">\n\n\n    </ul>\n    <ul class=\"navbar-nav ml-auto\">\n\n      <div class=\"dropdown\">\n        <span class=\"styleA\">Categorias</span>\n        <div class=\"dropdown-content\">\n          <a class=\"nav-link\" (click)=\"saveCategory(cl.name)\" routerLinkActive=\"/sites\" routerLink=\"/sites\"  *ngFor=\"let cl of categoryList\">{{cl.name}}</a>\n        </div>\n\n      </div>\n\n      <a  routerLinkActive=\"/contact\" routerLink=\"/contact\"  class=\"styleA\" >¿Eres empresa?</a>\n      <li class=\"nav-item\">\n        <a *ngIf=\"!isLoggedIn()\" routerLinkActive=\"/signin\" routerLink=\"/signin\"  class=\"styleA\" >Ingresa</a>\n      </li>\n      <li class=\"nav-item\">\n        <a *ngIf=\"!isLoggedIn()\" routerLinkActive=\"/signup\" routerLink=\"/signup\"  class=\"styleA\" >Registrate</a>\n      </li>\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\n        <a routerLinkActive=\"/categorys\" routerLink=\"/categorys\" class=\"styleA\" (click)=\"signOut()\">Salir</a>\n      </li>\n    </ul>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n<div id=\"mybutton\">\n  <a target=\"_blank\" href=\"https://www.facebook.com/FunnelCol/\" class=\"fa fa-facebook\"></a>\n  <br>\n  <a target=\"_blank\" href=\"https://www.instagram.com/funnelcolombia/\" class=\"fa fa-twitter\"></a>\n  <br>\n  <a target=\"_blank\" href=\"https://www.instagram.com/funnelcolombia/\" class=\"fa fa-instagram\"></a>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -246,7 +246,7 @@ AppModule = __decorate([
             {
                 provide: __WEBPACK_IMPORTED_MODULE_12__common_config_initial_config__["a" /* INITIAL_CONFIG */],
                 useValue: {
-                    apiURL: 'http://localhost:8080'
+                    apiURL: 'https://funnelcol.herokuapp.com/'
                 }
             },
             __WEBPACK_IMPORTED_MODULE_11__common_config_app_configuration_service__["a" /* AppConfiguration */],
@@ -1008,7 +1008,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container{\n    position: relative;\n    width: 400px;\n    -ms-flex-line-pack: center;\n        align-content: center;\n    background-color: transparent;\n  }\n\n\n.btn {\n        background: white;\n        width: 100px;\n        height: 40px;\n    color: white;\n    padding: 5px 5px;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n    margin: 4px 2px; /* Safari */\n    transition-duration: 0.4s;\n    cursor: pointer;\n        background-color: white;\n        color: black;\n        border: 2px solid #cf7b04;\n}\n\n.btn:hover {\n    background-color: #cf7b04;\n    color: white;\n}\n\n\n.card {\n    /* Add shadows to create the \"card\" effect */\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\n    transition: 0.3s;\n    padding: 10px 10px 10px 10px;\n        width: relative;\n        height: 350px;\n\n}\n\n/* On mouse-over, add a deeper shadow */\n.card:hover {\n    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\n}\n\n/* Add some padding inside the card container */\n.card-body {\n    padding: 10px 10px 10px 10px;\n}", ""]);
+exports.push([module.i, ".container{\n    position: relative;\n    width: 400px;\n    -ms-flex-line-pack: center;\n        align-content: center;\n    background-color: transparent;\n  }\n\n\n.card {\n    /* Add shadows to create the \"card\" effect */\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\n    transition: 0.3s;\n    padding: 10px 10px 10px 10px;\n\n}\n\n/* On mouse-over, add a deeper shadow */\n.card:hover {\n    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\n}\n\n/* Add some padding inside the card container */\n.card-body {\n    padding: 10px 10px 10px 10px;\n}", ""]);
 
 // exports
 
@@ -1021,7 +1021,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/sign-in/sign-in-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <br>\n    <br>\n    <br>\n\n    <div class=\"card\" >\n    <h2>Ingresa</h2>\n    <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\n        <div class=\"form-group\">\n            <label for=\"description\">Usuario</label>\n            <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"username\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"priority\">Contraseña</label>\n            <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\" required>\n        </div>\n\n        <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signInForm.valid\">Sign In</button>\n\n        <p class=\"text-danger mt-1\" *ngIf=\"loginError\">{{loginError}}</p>\n        \n\n    </form>\n    <br>\n    <br>\n    <br>    <br>\n    <br>\n    <br>\n    </div>\n</div>"
+module.exports = "<div class=\"container\">\n    <br>\n    <br>\n    <br>\n\n    <div class=\"card\" >\n    <h2>Ingresa</h2>\n    <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\n        <div class=\"form-group\">\n            <label for=\"description\">Usuario</label>\n            <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"username\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"priority\">Contraseña</label>\n            <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\" required>\n        </div>\n\n        <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signInForm.valid\">Sign In</button>\n\n        <p class=\"text-danger mt-1\" *ngIf=\"loginError\">{{loginError}}</p>\n        \n\n    </form>\n        <hr>\n        <a routerLinkActive=\"/signup\" routerLink=\"/signup\" >¿Aun no estas registrado? Registrate aqui.</a>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1094,7 +1094,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container{\n    position: relative;\n    width: 500px;\n    -ms-flex-line-pack: center;\n        align-content: center;\n    background-color: transparent;\n  }\n\n\n.btn {\n        background: white;\n        width: 100px;\n        height: 40px;\n    color: white;\n    padding: 5px 5px;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n    margin: 4px 2px; /* Safari */\n    transition-duration: 0.4s;\n    cursor: pointer;\n        background-color: white;\n        color: black;\n        border: 2px solid #cf7b04;\n}\n\n.btn:hover {\n    background-color: #cf7b04;\n    color: white;\n}\n\n\n.card {\n    /* Add shadows to create the \"card\" effect */\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\n    transition: 0.3s;\n    padding: 10px 10px 10px 10px;\n}\n\n/* On mouse-over, add a deeper shadow */\n.card:hover {\n    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\n}\n\n/* Add some padding inside the card container */\n.card-body {\n    padding: 10px 10px 10px 10px;\n}", ""]);
+exports.push([module.i, ".container{\n    position: relative;\n    width: 500px;\n    -ms-flex-line-pack: center;\n        align-content: center;\n    background-color: transparent;\n  }\n\n\n\n.card {\n    /* Add shadows to create the \"card\" effect */\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\n    transition: 0.3s;\n    padding: 10px 10px 10px 10px;\n}\n\n/* On mouse-over, add a deeper shadow */\n.card:hover {\n    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\n}\n\n/* Add some padding inside the card container */\n.card-body {\n    padding: 10px 10px 10px 10px;\n}", ""]);
 
 // exports
 
@@ -1107,7 +1107,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/sign-up/sign-up-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <br>\n    <br>\n    <br>\n    <div class=\"card\" >\n    <h2>Registrate</h2>\n        <br>\n    <form [formGroup]=\"signUpForm\" (ngSubmit)=\"signUp()\" novalidate>\n\n        <div class=\"form-group\">\n            <label for=\"name\">Nombre Completo</label>\n            <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"email\">Email</label>\n            <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"celphone\">Celular</label>\n            <input type=\"text\" class=\"form-control\" id=\"celphone\" formControlName=\"celphone\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"username\">Nombre de usario</label>\n            <input type=\"text\" class=\"form-control\" id=\"username\" formControlName=\"username\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"priority\">Contraseña</label>\n            <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\" required>\n        </div>\n\n        <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signUpForm.valid\">Registrate</button>\n\n    </form>\n</div>\n</div>"
+module.exports = "<div class=\"container\">\n    <br>\n    <br>\n    <br>\n    <div class=\"card\" >\n    <h2>Registrate</h2>\n        <br>\n    <form [formGroup]=\"signUpForm\" (ngSubmit)=\"signUp()\" novalidate>\n\n        <div class=\"form-group\">\n            <label for=\"name\">Nombre Completo</label>\n            <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"email\">Email</label>\n            <input type=\"email\" class=\"form-control\" id=\"email\" formControlName=\"email\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"celphone\">Celular</label>\n            <input type=\"number\" class=\"form-control\" id=\"celphone\" formControlName=\"celphone\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"username\">Nombre de usario</label>\n            <input type=\"text\" class=\"form-control\" id=\"username\" formControlName=\"username\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"priority\">Contraseña</label>\n            <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\" required>\n        </div>\n        <div class=\"form-group\">\n            <input type=\"checkbox\" class=\"form-control\" id=\"terminos\" formControlName=\"terminos\" required>\n            Acepto los <a target=\"_blank\" routerLinkActive=\"/terminosycondiciones\" routerLink=\"/terminosycondiciones\" >\n                Terminos y condiciones</a> de uso de la información.\n        </div>\n\n\n        <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signUpForm.valid\">{{textButton}}</button>\n\n    </form>\n        <p class=\"text-danger mt-1\" *ngIf=\"error\">{{error}}</p>\n</div>\n</div>"
 
 /***/ }),
 
@@ -1144,20 +1144,29 @@ var SignUpPageComponent = (function () {
             email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */](),
             celphone: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */](),
             password: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */](),
+            terminos: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */](),
         });
     }
     SignUpPageComponent.prototype.signUp = function () {
         var _this = this;
-        this.usersService.signUp(this.signUpForm.get('name').value, this.signUpForm.get('username').value, this.signUpForm.get('email').value, this.signUpForm.get('celphone').value, this.signUpForm.get('password').value).subscribe(function (loginResponse) {
-            _this.usersService.login(_this.signUpForm.get('username').value, _this.signUpForm.get('password').value).subscribe(function (loginResponse) {
-                _this.router.navigate(['categorys']);
+        this.error = "";
+        this.textButton = "Registrando ...";
+        this.usersService.getPerson(this.signUpForm.get('username').value).subscribe(function (personResponse) {
+            _this.error = "El nombre de usuario ya se encuentra registrado";
+            _this.textButton = "Registrate";
+        }, function (error) {
+            _this.usersService.signUp(_this.signUpForm.get('name').value, _this.signUpForm.get('username').value, _this.signUpForm.get('email').value, _this.signUpForm.get('celphone').value, _this.signUpForm.get('password').value).subscribe(function (loginResponse) {
+                _this.usersService.login(_this.signUpForm.get('username').value, _this.signUpForm.get('password').value).subscribe(function (loginResponse) {
+                    _this.router.navigate(['categorys']);
+                }, function (error) {
+                });
             }, function (error) {
             });
-        }, function (error) {
         });
     };
     SignUpPageComponent.prototype.ngOnInit = function () {
         window.scroll(0, 0);
+        this.textButton = "Registrate";
     };
     return SignUpPageComponent;
 }());
@@ -1530,6 +1539,9 @@ var UsersService = (function (_super) {
     };
     UsersService.prototype.searchSite = function (siteName, townName) {
         return this.get(this.resourceUrl + "search/" + siteName + "/" + townName);
+    };
+    UsersService.prototype.getPerson = function (username) {
+        return this.get("person/getPerson/" + username);
     };
     return UsersService;
 }(__WEBPACK_IMPORTED_MODULE_2__common_api_service__["a" /* APIService */]));

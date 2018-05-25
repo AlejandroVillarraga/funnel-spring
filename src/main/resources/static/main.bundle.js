@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-toggleable-md  fixed-top \">\n\n  <div class=\"navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"styleLogo\" routerLinkActive=\"/categorys\" routerLink=\"/categorys\" ><img class=\"image\" src=\"/assets/brand/logo.png\" width=\"200\" height=\"70\"></a>\n\n\n      </li>\n      &nbsp;\n      &nbsp;\n      &nbsp;\n\n      <form [formGroup]=\"searchForm\" (ngSubmit)=\"searchSite()\" class=\"form-inline\">\n\n\n        <div class=\"dropdown\">\n\n          <span class=\"styleA\"><img class=\"image\" src=\"/assets/images/location.png\" width=\"19\" height=\"19\">{{textTowns}}</span>\n          <div class=\"dropdown-content\">\n            <a class=\"nav-link\" (click)=\"searchTown(town.name)\"  *ngFor=\"let town of townList\">{{town.name}}</a>\n          </div>\n\n        </div>\n\n        &nbsp;\n        <div class=\"input-group\">\n\n          <input type=\"text\" class=\"form-control\" formControlName=\"inputSearch\" placeholder=\"Buscar\" >\n          <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!searchForm.valid\">Buscar</button>\n        </div>\n      </form>\n    </ul>\n  </div>\n\n  <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">\n    <ul class=\"navbar-nav ml-auto\">\n\n\n    </ul>\n    <ul class=\"navbar-nav ml-auto\">\n\n      <div class=\"dropdown\">\n        <span class=\"styleA\">Categorias</span>\n        <div class=\"dropdown-content\">\n          <a class=\"nav-link\" (click)=\"saveCategory(cl.name)\" routerLinkActive=\"/sites\" routerLink=\"/sites\"  *ngFor=\"let cl of categoryList\">{{cl.name}}</a>\n        </div>\n\n      </div>\n\n      <a  routerLinkActive=\"/contact\" routerLink=\"/contact\"  class=\"styleA\" >¿Eres empresa?</a>\n      <li class=\"nav-item\">\n        <a *ngIf=\"!isLoggedIn()\" routerLinkActive=\"/signin\" routerLink=\"/signin\"  class=\"styleA\" >Ingresa</a>\n      </li>\n      <li class=\"nav-item\">\n        <a *ngIf=\"!isLoggedIn()\" routerLinkActive=\"/signup\" routerLink=\"/signup\"  class=\"styleA\" >Registrate</a>\n      </li>\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\n        <a routerLinkActive=\"/categorys\" routerLink=\"/categorys\" class=\"styleA\" (click)=\"signOut()\">Salir</a>\n      </li>\n    </ul>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n<div id=\"mybutton\">\n  <a target=\"_blank\" href=\"https://www.facebook.com/FunnelCol/\" class=\"fa fa-facebook\"></a>\n  <br>\n  <a target=\"_blank\" href=\"https://www.instagram.com/funnelcolombia/\" class=\"fa fa-twitter\"></a>\n  <br>\n  <a target=\"_blank\" href=\"https://www.instagram.com/funnelcolombia/\" class=\"fa fa-instagram\"></a>\n</div>\n\n\n"
+module.exports = "<nav class=\"navbar navbar-toggleable-md  fixed-top \">\n\n  <div class=\"navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"styleLogo\" routerLinkActive=\"/categorys\" routerLink=\"/categorys\" ><img class=\"image\" src=\"/assets/brand/logo.png\" width=\"200\" height=\"70\"></a>\n\n      </li>\n      &nbsp;\n      &nbsp;\n      &nbsp;\n\n\n\n        <form [formGroup]=\"searchForm\" (ngSubmit)=\"searchSite()\" class=\"form-inline\">\n\n\n\n\n          &nbsp;\n          <div class=\"input-group\">\n\n            <input type=\"text\" class=\"form-control\" formControlName=\"inputSearch\" placeholder=\"Buscar\" >\n            <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!searchForm.valid\">Buscar</button>\n          </div>\n        </form>\n    </ul>\n  </div>\n\n  <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">\n    <ul class=\"navbar-nav ml-auto\">\n\n\n    </ul>\n    <ul class=\"navbar-nav ml-auto\">\n\n      <li class=\"nav-item\">\n        <div class=\"dropdown\">\n\n          <span class=\"styleA\"><img class=\"image\" src=\"/assets/images/location.png\" width=\"19\" height=\"19\">{{textTowns}}</span>\n          <div class=\"dropdown-content\">\n            <div style=\" margin: 0 auto;\" id=\"loader2\" class=\"loader\"></div>\n            <a class=\"nav-link\" (click)=\"searchTown(town.name)\"  *ngFor=\"let town of townList\">{{town.name}}</a>\n          </div>\n\n        </div>\n      </li>\n\n      <div class=\"dropdown\">\n        <span class=\"styleA\">Categorias</span>\n        <div class=\"dropdown-content\">\n\n          <div style=\" margin: 0 auto;\" id=\"loader\" class=\"loader\"></div>\n          <a class=\"nav-link\" (click)=\"saveCategory(cl.name)\" routerLinkActive=\"/sites\" routerLink=\"/sites\"  *ngFor=\"let cl of categoryList\">{{cl.name}}</a>\n        </div>\n\n      </div>\n\n      <a  routerLinkActive=\"/contact\" routerLink=\"/contact\"  class=\"styleA\" >¿Eres empresa?</a>\n      <li class=\"nav-item\">\n        <a *ngIf=\"!isLoggedIn()\" routerLinkActive=\"/signin\" routerLink=\"/signin\"  class=\"styleA\" >Ingresa</a>\n      </li>\n      <li class=\"nav-item\">\n        <a *ngIf=\"!isLoggedIn()\" routerLinkActive=\"/signup\" routerLink=\"/signup\"  class=\"styleA\" >Registrate</a>\n      </li>\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\n        <a routerLinkActive=\"/categorys\" routerLink=\"/categorys\" class=\"styleA\" (click)=\"signOut()\">Salir</a>\n      </li>\n    </ul>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n<div id=\"mybutton\">\n  <a target=\"_blank\" href=\"https://www.facebook.com/FunnelCol/\" class=\"fa fa-facebook\"></a>\n  <br>\n  <a target=\"_blank\" href=\"https://www.instagram.com/funnelcolombia/\" class=\"fa fa-twitter\"></a>\n  <br>\n  <a target=\"_blank\" href=\"https://www.instagram.com/funnelcolombia/\" class=\"fa fa-instagram\"></a>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -74,14 +74,13 @@ var AppComponent = (function () {
         this.router = router;
         this.title = 'app';
         window.scroll(0, 0);
-        if (!this.authService.isLoggedIn()) {
-            this.router.navigate(['/categorys']);
-        }
+        this.router.navigate(['/categorys']);
         this.searchForm = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["c" /* FormGroup */]({
             inputSearch: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormControl */]()
         });
         this.townService.getTowns().subscribe(function (townsResponse) {
             _this.townList = townsResponse;
+            document.getElementById("loader2").remove();
         });
         var data1 = sessionStorage.getItem("searchTown");
         if (data1 == null) {
@@ -92,6 +91,7 @@ var AppComponent = (function () {
         }
         this.categoryService.getCategorys().subscribe(function (cateResponse) {
             _this.categoryList = cateResponse;
+            document.getElementById("loader").remove();
         });
     }
     AppComponent.prototype.searchTown = function (townName) {
@@ -107,7 +107,7 @@ var AppComponent = (function () {
         var that = this;
         setTimeout(function () {
             that.router.navigate(['/categorys']);
-        }, 300);
+        }, 10);
     };
     AppComponent.prototype.searchSite = function () {
         var data = this.searchForm.get('inputSearch').value;
@@ -116,7 +116,7 @@ var AppComponent = (function () {
         var that = this;
         setTimeout(function () {
             that.router.navigate(['/searchSite']);
-        }, 1000);
+        }, 10);
     };
     AppComponent.prototype.saveCategory = function (name) {
         sessionStorage.setItem("categoryName", name);
@@ -246,7 +246,7 @@ AppModule = __decorate([
             {
                 provide: __WEBPACK_IMPORTED_MODULE_12__common_config_initial_config__["a" /* INITIAL_CONFIG */],
                 useValue: {
-                    apiURL: 'https://funnelcol.herokuapp.com/'
+                    apiURL: 'http://localhost:8080'
                 }
             },
             __WEBPACK_IMPORTED_MODULE_11__common_config_app_configuration_service__["a" /* AppConfiguration */],
@@ -569,7 +569,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/category-page/category-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <br>\n    <br>\n    <div>\n\n\n        <h2>En <img class=\"image\" src=\"/assets/brand/logo.png\" width=\"195\" height=\"70\"> podras conocer lo mejores lugares para realizar planes con tu familia y amigos ...</h2>\n\n    </div>\n    <font size=\"4\" color=\"grey\">Categorías:</font>\n    <div class=\"row\">\n\n        <div *ngFor=\"let cl of categoryList\" class=\"col-xs-6 col-xs-3\">\n            <br>\n            <a (click)=\"saveCategory(cl.name)\" routerLinkActive=\"/sites\" routerLink=\"/sites\"  class=\"btn btn1\" role=\"button\" aria-pressed=\"true\">\n                <div class=\"card text-center\">\n                    <img class=\"category\" src=\"{{cl.image}}\" width=\"100%\" height=\"100%\">\n                    <div class=\"card-img-overlay\">\n                        <br>\n                        <br>\n                        {{cl.name}}\n                    </div>\n                </div>\n                </a>\n            <br>\n        </div>\n    </div>\n    <br>\n    <br>\n    <div class=\"card\" style=\"width: 1000px\">\n\n        <ul class=\"list-group list-group-flush\">\n            <li class=\"list-group-item\"><font size=\"5\">Nuestros Aliados</font></li>\n            <li class=\"list-group-item\">\n                <div class=\"card-body\">\n                    <div class=\"row\" >\n                        <div *ngFor=\"let ul of userslist\" class=\"col-xs-4\">\n                            <img class=\"center\" src=\"{{ul.logo}}\" width=\"80\" height=\"80\">\n                        </div>\n\n                    </div>\n                </div>\n            </li>\n        </ul>\n\n\n    </div>\n\n</div>\n\n"
+module.exports = "<div class=\"container\">\n    <br>\n    <br>\n    <div>\n\n\n        <h2>En <img class=\"image\" src=\"/assets/brand/logo.png\" width=\"195\" height=\"70\"> podras conocer lo mejores lugares para realizar planes con tu familia y amigos ...</h2>\n\n    </div>\n    <font size=\"4\" color=\"grey\">Categorías:</font>\n    <div style=\" margin: 0 auto;\" id=\"loader\" class=\"loader\"></div>\n    <div class=\"row\">\n\n        <div *ngFor=\"let cl of categoryList\" class=\"col-xs-6 col-xs-3\">\n            <br>\n            <a (click)=\"saveCategory(cl.name)\" routerLinkActive=\"/sites\" routerLink=\"/sites\"  class=\"btn btn1\" role=\"button\" aria-pressed=\"true\">\n                <div class=\"card text-center\">\n                    <img class=\"category\" src=\"{{cl.image}}\" width=\"100%\" height=\"100%\">\n                    <div class=\"card-img-overlay\">\n                        <br>\n                        <br>\n                        {{cl.name}}\n                    </div>\n                </div>\n                </a>\n            <br>\n        </div>\n    </div>\n    <br>\n    <br>\n    <div class=\"card\" style=\"width: 1000px\">\n        <ul class=\"list-group list-group-flush\">\n            <li class=\"list-group-item\"><font size=\"5\">Nuestros Aliados</font></li>\n            <li class=\"list-group-item\">\n                <div class=\"card-body\">\n                    <div class=\"row\" >\n\n                        <div style=\" margin: 0 auto;\" id=\"loader2\" class=\"loader\"></div>\n                        <div *ngFor=\"let ul of userslist\" class=\"col-xs-4\">\n                            <img class=\"center\" src=\"{{ul.logo}}\" width=\"80\" height=\"80\">\n                        </div>\n\n                    </div>\n                </div>\n            </li>\n        </ul>\n\n\n    </div>\n\n</div>\n\n"
 
 /***/ }),
 
@@ -605,9 +605,11 @@ var CategoryPageComponent = (function () {
         window.scroll(0, 0);
         this.categoryService.getCategorys().subscribe(function (cateResponse) {
             _this.categoryList = cateResponse;
+            document.getElementById("loader").remove();
         });
         this.usersService.getSites().subscribe(function (usersResponse) {
             _this.userslist = usersResponse;
+            document.getElementById("loader2").remove();
         });
     };
     CategoryPageComponent.prototype.saveCategory = function (name) {
@@ -650,7 +652,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/coupon-page/coupon-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<br>\n<br>\n\n<div id=\"content\"  #content>\n\n    <font size=\"16px\">{{currentCoupon.name}}</font><br>\n    <font size=\"2px\">Anterior precio: <del>{{currentCoupon.lastPrice}}</del></font><br>\n    <font size=\"5px\">Precio actual: {{currentCoupon.newPrice}}</font><br>\n    <font size=\"4\">Descrpción: {{currentCoupon.description}}</font><br>\n    <font size=\"4\">Code: {{currentCoupon.code}}</font><br>\n    <font size=\"0\">{{currentCoupon.smallLetters}}</font><br>\n\n</div>\n<a (click)=\"downloadPdf()\" class=\"btn btn-primary\">Descargar</a>"
+module.exports = "<br>\n<br>\n<img class=\"category\" src=\"{{currentCoupon.site.logo}}\" width=\"200px\" height=\"200px\">\n<div style=\" margin: 0 auto;\" id=\"loader\" class=\"loader\"></div>\n<div id=\"content\"  #content>\n    <font size=\"10px\">{{currentCoupon.name}}</font><br>\n    <font size=\"2px\">Anterior precio: $<del>{{currentCoupon.lastPrice}}</del></font><br>\n    <font size=\"5px\">Precio actual: ${{currentCoupon.newPrice}}</font><br>\n    <font size=\"4\">Descripción: {{currentCoupon.description}}</font><br>\n    <font size=\"6\">Code: {{currentCoupon.code}}</font><br>\n    <font size=\"0\">{{currentCoupon.smallLetters}}</font><br>\n</div>\n<a (click)=\"downloadPdf(currentCoupon.site.logo)\" class=\"btn btn-primary\">Descargar</a>"
 
 /***/ }),
 
@@ -679,8 +681,9 @@ var CouponPageComponent = (function () {
     function CouponPageComponent(usersService) {
         this.usersService = usersService;
     }
-    CouponPageComponent.prototype.downloadPdf = function () {
-        var doc = new __WEBPACK_IMPORTED_MODULE_2_jspdf__();
+    CouponPageComponent.prototype.downloadPdf = function (companyLogo) {
+        console.log(companyLogo);
+        var doc = new __WEBPACK_IMPORTED_MODULE_2_jspdf__('l', 'mm', 'a5');
         var specialElementHandlers = {
             '#editor': function (element, renderer) {
                 return true;
@@ -688,10 +691,12 @@ var CouponPageComponent = (function () {
         };
         var content = this.content.nativeElement;
         var img = new Image;
-        img.crossOrigin = ""; // for demo as we are at different origin than image
         img.src = "/assets/brand/logo.png";
-        doc.addImage(img, 10, 10, 50, 25);
-        doc.fromHTML(content.innerHTML, 15, 40, {
+        doc.addImage(img, 10, 10, 50, 20);
+        var logo = new Image;
+        logo.src = companyLogo;
+        doc.addImage(logo, 10, 30, 40, 40);
+        doc.fromHTML(content.innerHTML, 5, 50, {
             'width': 190,
             'elementHandlers': specialElementHandlers
         });
@@ -705,6 +710,7 @@ var CouponPageComponent = (function () {
         this.usersService.getCoupon(data, data1).subscribe(function (usersResponse) {
             console.log(usersResponse);
             _this.currentCoupon = usersResponse;
+            document.getElementById("loader").remove();
         });
     };
     return CouponPageComponent;
@@ -797,7 +803,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.loader {\n  border: 16px solid #f3f3f3;\n  border-radius: 50%;\n  border-top: 16px solid blue;\n  border-right: 16px solid green;\n  border-bottom: 16px solid red;\n  border-left: 16px solid pink;\n  width: 120px;\n  height: 120px;\n  -webkit-animation: spin 2s linear infinite;\n  animation: spin 2s linear infinite;\n}\n\n@-webkit-keyframes spin {\n  0% { -webkit-transform: rotate(0deg); }\n  100% { -webkit-transform: rotate(360deg); }\n}\n\n@keyframes spin {\n  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -934,7 +940,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/search-site-page/search-site-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<br>\n<br>\n\n<div class=\"card\" style=\"width: 800px\">\n\n    <ul class=\"list-group list-group-flush\">\n        <li class=\"list-group-item\">Busqueda</li>\n        <li class=\"list-group-item\">\n            <div class=\"card-body\">\n                <div class=\"row\" >\n                    <div *ngFor=\"let ul of userslist\" class=\"col-xs-4\">\n\n                        <div class=\"card internos\" style=\"width: 260px\">\n                            <div class=\"card-body\">\n                                <img src=\"{{ul.logo}}\" width=\"120\" height=\"120\">\n                                <a (click)=\"saveSite(ul.companyName, ul.username)\" routerLinkActive=\"/siteProfile\" routerLink=\"/siteProfile\"  class=\"btn btn1\">\n                                    Ver Sitio</a>\n                            </div>\n                        </div>\n                    </div>\n\n                </div>\n            </div>\n        </li>\n    </ul>\n\n\n</div>\n<font size=\"3\" color=\"red\">{{errorText}}</font>\n\n"
+module.exports = "<br>\n<br>\n\n<div class=\"card\" style=\"width: 800px\">\n\n    <ul class=\"list-group list-group-flush\">\n        <li class=\"list-group-item\">Busqueda</li>\n        <li class=\"list-group-item\">\n            <div class=\"card-body\">\n                <div class=\"row\" >\n\n                    <div style=\" margin: 0 auto;\" id=\"loader\" class=\"loader\"></div>\n                    <div *ngFor=\"let ul of userslist\" class=\"col-xs-4\">\n\n                        <div class=\"card internos\" style=\"width: 260px\">\n                            <div class=\"card-body\">\n                                <img src=\"{{ul.logo}}\" width=\"120\" height=\"120\">\n                                <a (click)=\"saveSite(ul.companyName, ul.username)\" routerLinkActive=\"/siteProfile\" routerLink=\"/siteProfile\"  class=\"btn btn1\">\n                                    Ver Sitio</a>\n                            </div>\n                        </div>\n                    </div>\n\n                </div>\n            </div>\n        </li>\n    </ul>\n\n\n</div>\n<font size=\"3\" color=\"red\">{{errorText}}</font>\n\n"
 
 /***/ }),
 
@@ -972,6 +978,7 @@ var SearchSitePageComponent = (function () {
         var dataTown = sessionStorage.getItem("searchTown");
         this.usersService.searchSite(data, dataTown).subscribe(function (usersResponse) {
             _this.userslist = usersResponse;
+            document.getElementById("loader").remove();
             if (_this.userslist.length == 0) {
                 _this.errorText = "Lo sentimos !!!! No se encontro nada relacionado con " + data;
             }
@@ -1205,7 +1212,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/site-profile/site-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <br>\n    <br>\n    <div class=\"row\">\n    <div *ngFor=\"let c of listCoupons\" class=\"col-xs-4\">\n        <br>\n        <div class=\"card\">\n            <img class=\"card-img-top\" src=\"{{c.image}}\" alt=\"Card image\" style=\"width:100%\">\n            <div class=\"card-img-overlay\">\n\n                <img src=\"/assets/images/promo.svg\" width=\"80\" height=\"80\">\n                <div class=\"descuento\">\n                    <font size=\"5\" color=\"white\">{{c.discountRate}}%</font>\n                    de descuento\n                </div>\n                <br>\n                <br>\n                <br>\n                <br>\n                <div class=\"promo\">\n\n                    <font size=\"2\"><font size=\"2\">antes: </font><del>${{c.lastPrice}}</del></font>\n                    <br>\n                    <font size=\"4\"><font size=\"2\">ahora: </font>${{c.newPrice}}</font>\n                </div>\n\n            </div>\n            <div class=\"card-body\">\n                <h4 class=\"card-title\">{{c.name}}</h4>\n                <p class=\"card-text\">{{c.description}}</p>\n                <a (click)=\"saveCouponName(c.name)\" class=\"btn btn-primary\"><font color=\"white\">Ver</font></a>\n                <br>\n                <font size=\"0\">{{c.smallLetters}}</font>\n\n            </div>\n        </div>\n\n\n    </div>\n    </div>\n    <br>\n    <div class=\"row\">\n        <div class=\"col-sm-12\">\n\n            <div class=\"card\" style=\"width:1050px\">\n                <div class=\"row \">\n                    <div class=\"col-sm-4\">\n                        <img class=\"card-img-top\" src=\"{{currentUser.logo}}\" alt=\"Card image\" width=\"300\" height=\"300\">\n\n\n                    </div>\n                    <div class=\"col-sm-4\">\n                        <div class=\"card-block px-3\">\n                            <h4 class=\"card-title\"><font size=\"6\">{{currentUser.companyName}}</font></h4>\n                            <p class=\"card-text\"><font size=\"2\">Contacto: {{currentUser.cel1}} - {{currentUser.cel2}}</font></p>\n                            <p class=\"card-text\"><font size=\"2\">Dirección: {{currentUser.companyAddres}}</font></p>\n                            <p class=\"card-text\"><font size=\"2\">Correo: {{currentUser.email}}</font></p>\n                            <p class=\"card-text\"><font size=\"2\">Horario: {{currentUser.schedule}}</font></p>\n                            <p *ngIf=\"currentUser.tieneDomicilios\" class=\"card-text\">\n                                <font size=\"2\">Tiene Domicilios</font>\n                            </p>\n                            <p *ngIf=\"currentUser.tieneDatafono\" class=\"card-text\">\n                                <font size=\"2\">Tiene Datafono</font>\n                            </p>\n                            <p *ngIf=\"!currentUser.tieneDomicilios\" class=\"card-text\">\n                                <font size=\"2\">No tiene Domicilios</font>\n                            </p>\n                            <p *ngIf=\"!currentUser.tieneDatafono\" class=\"card-text\">\n                                <font size=\"2\">No tiene Datafono</font>\n                            </p>\n\n\n\n                            <a target=\"_blank\" href=\"{{currentUser.linkFacebook}}\" class=\"fa fa-facebook\"></a>\n                            <a target=\"_blank\" href=\"{{currentUser.linkInstagram}}\" class=\"fa fa-instagram\"></a>\n                            <a target=\"_blank\" href=\"{{currentUser.linkTA}}\" class=\"fa fa-tripadvisor\"></a>\n                            <a target=\"_blank\" href=\"{{currentUser.linkGoogleMaps}}\" class=\"fa fa-map-marker\"></a>\n\n                        </div>\n\n\n\n                    </div>\n\n                    <div  class=\"col-sm-4\">\n\n                    </div>\n                </div>\n\n\n            </div>\n\n        </div>\n\n    </div>\n\n\n\n\n\n\n\n\n\n\n</div>"
+module.exports = "<div class=\"container\">\n    <br>\n    <br>\n\n    <div style=\" margin: 0 auto;\" id=\"loader\" class=\"loader\"></div>\n    <div class=\"row\">\n    <div *ngFor=\"let c of listCoupons\" class=\"col-xs-4\">\n        <br>\n        <div class=\"card\">\n            <img class=\"card-img-top\" src=\"{{c.image}}\" alt=\"Card image\" style=\"width:100%\">\n            <div class=\"card-img-overlay\">\n\n                <img src=\"/assets/images/promo.svg\" width=\"80\" height=\"80\">\n                <div class=\"descuento\">\n                    <font size=\"5\" color=\"white\">{{c.discountRate}}%</font>\n                    de descuento\n                </div>\n                <br>\n                <br>\n                <br>\n                <br>\n                <div class=\"promo\">\n\n                    <font size=\"2\"><font size=\"2\">antes: </font><del>${{c.lastPrice}}</del></font>\n                    <br>\n                    <font size=\"4\"><font size=\"2\">ahora: </font>${{c.newPrice}}</font>\n                </div>\n\n            </div>\n            <div class=\"card-body\">\n                <h4 class=\"card-title\">{{c.name}}</h4>\n                <p class=\"card-text\">{{c.description}}</p>\n                <a (click)=\"saveCouponName(c.name)\" class=\"btn btn-primary\"><font color=\"white\">Ver</font></a>\n                <br>\n                <font size=\"0\">{{c.smallLetters}}</font>\n\n            </div>\n        </div>\n\n\n    </div>\n    </div>\n    <br>\n    <div class=\"row\">\n        <div class=\"col-sm-12\">\n\n            <div class=\"card\" style=\"width:1050px\">\n                <div class=\"row \">\n                    <div class=\"col-sm-4\">\n                        <img class=\"card-img-top\" src=\"{{currentUser.logo}}\" alt=\"Card image\" width=\"300\" height=\"300\">\n\n\n                    </div>\n                    <div class=\"col-sm-4\">\n                        <div class=\"card-block px-3\">\n                            <h4 class=\"card-title\"><font size=\"6\">{{currentUser.companyName}}</font></h4>\n                            <p class=\"card-text\"><font size=\"2\">Contacto: {{currentUser.cel1}} - {{currentUser.cel2}}</font></p>\n                            <p class=\"card-text\"><font size=\"2\">Dirección: {{currentUser.companyAddres}}</font></p>\n                            <p class=\"card-text\"><font size=\"2\">Correo: {{currentUser.email}}</font></p>\n                            <p class=\"card-text\"><font size=\"2\">Horario: {{currentUser.schedule}}</font></p>\n                            <p *ngIf=\"currentUser.tieneDomicilios\" class=\"card-text\">\n                                <font size=\"2\">Tiene Domicilios</font>\n                            </p>\n                            <p *ngIf=\"currentUser.tieneDatafono\" class=\"card-text\">\n                                <font size=\"2\">Tiene Datafono</font>\n                            </p>\n                            <p *ngIf=\"!currentUser.tieneDomicilios\" class=\"card-text\">\n                                <font size=\"2\">No tiene Domicilios</font>\n                            </p>\n                            <p *ngIf=\"!currentUser.tieneDatafono\" class=\"card-text\">\n                                <font size=\"2\">No tiene Datafono</font>\n                            </p>\n\n\n\n                            <a target=\"_blank\" href=\"{{currentUser.linkFacebook}}\" class=\"fa fa-facebook\"></a>\n                            <a target=\"_blank\" href=\"{{currentUser.linkInstagram}}\" class=\"fa fa-instagram\"></a>\n                            <a target=\"_blank\" href=\"{{currentUser.linkTA}}\" class=\"fa fa-tripadvisor\"></a>\n                            <a target=\"_blank\" href=\"{{currentUser.linkGoogleMaps}}\" class=\"fa fa-map-marker\"></a>\n\n                        </div>\n\n\n\n                    </div>\n\n                    <div  class=\"col-sm-4\">\n\n                    </div>\n                </div>\n\n\n            </div>\n\n        </div>\n\n    </div>\n\n\n\n\n\n\n\n\n\n\n</div>"
 
 /***/ }),
 
@@ -1217,6 +1224,7 @@ module.exports = "<div class=\"container\">\n    <br>\n    <br>\n    <div class=
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1229,9 +1237,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SiteProfileComponent = (function () {
-    function SiteProfileComponent(usersService, router) {
+    function SiteProfileComponent(usersService, authService, router) {
         this.usersService = usersService;
+        this.authService = authService;
         this.router = router;
     }
     SiteProfileComponent.prototype.ngOnInit = function () {
@@ -1246,11 +1256,20 @@ var SiteProfileComponent = (function () {
         this.usersService.getCouponsByUsernameSite(data1).subscribe(function (usersResponse) {
             console.log(usersResponse);
             _this.listCoupons = usersResponse;
+            document.getElementById("loader").remove();
         });
     };
     SiteProfileComponent.prototype.saveCouponName = function (name) {
-        this.router.navigate(['coupon']);
+        if (this.isLoggedIn()) {
+            this.router.navigate(['coupon']);
+        }
+        else {
+            this.router.navigate(['signin']);
+        }
         sessionStorage.setItem("couponName", name);
+    };
+    SiteProfileComponent.prototype.isLoggedIn = function () {
+        return this.authService.isLoggedIn();
     };
     return SiteProfileComponent;
 }());
@@ -1260,10 +1279,10 @@ SiteProfileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/pages/site-profile/site-profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pages/site-profile/site-profile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__common_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__common_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _c || Object])
 ], SiteProfileComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=site-profile.component.js.map
 
 /***/ }),
@@ -1289,7 +1308,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/sites-page/sites-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <br>\n  <div class=\"row\">\n\n    <div *ngFor=\"let ul of userslist\" class=\"col-xs-6 col-xs-3\">\n      <br>\n      <a (click)=\"saveSite(ul.companyName, ul.username)\" routerLinkActive=\"/siteProfile\" routerLink=\"/siteProfile\"  class=\"btn btn1\" role=\"button\" aria-pressed=\"true\">\n        <img src=\"{{ul.logo}}\" width=\"190\" height=\"190\"><HR><p>{{ul.companyName}}</p><p>{{ul.companyAddres}}</p></a>\n    </div>\n\n  </div>\n  <a class=\"btnHref\" routerLinkActive=\"/categorys\" routerLink=\"/categorys\"><img src=\"/assets/images/flechaatras.svg\" width=\"30\" height=\"30\">      Categorías</a>\n\n</div>\n"
+module.exports = "<div class=\"container\">\n  <br>\n  <div class=\"row\">\n\n    <div style=\" margin: 0 auto;\" id=\"loader\" class=\"loader\"></div>\n\n    <div *ngFor=\"let ul of userslist\" class=\"col-xs-6 col-xs-3\">\n      <br>\n      <a (click)=\"saveSite(ul.companyName, ul.username)\" routerLinkActive=\"/siteProfile\" routerLink=\"/siteProfile\"  class=\"btn btn1\" role=\"button\" aria-pressed=\"true\">\n        <img src=\"{{ul.logo}}\" width=\"190\" height=\"190\"><HR><p>{{ul.companyName}}</p><p>{{ul.companyAddres}}</p></a>\n    </div>\n\n  </div>\n  <a class=\"btnHref\" routerLinkActive=\"/categorys\" routerLink=\"/categorys\"><img src=\"/assets/images/flechaatras.svg\" width=\"30\" height=\"30\">      Categorías</a>\n\n</div>\n"
 
 /***/ }),
 
@@ -1322,6 +1341,7 @@ var SitesPageComponent = (function () {
         var data = sessionStorage.getItem("categoryName");
         this.usersService.getSitesByCategory(data).subscribe(function (usersResponse) {
             _this.userslist = usersResponse;
+            document.getElementById("loader").remove();
         });
     };
     SitesPageComponent.prototype.saveSite = function (name, username) {
