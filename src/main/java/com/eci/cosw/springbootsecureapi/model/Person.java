@@ -13,10 +13,10 @@ public class Person {
     String name;
     String username;
     String email;
-    String celphone;
+    BigInteger celphone;
     String password;
 
-    public Person(String name, String username, String email, String celphone, String password) {
+    public Person(String name, String username, String email, BigInteger celphone, String password) {
         this.name = name;
         this.username = username;
         this.email = email;
@@ -57,11 +57,11 @@ public class Person {
     }
 
     @Column(name = "celphone", nullable = false)
-    public String getCelphone() {
+    public BigInteger getCelphone() {
         return celphone;
     }
 
-    public void setCelphone(String celphone) {
+    public void setCelphone(BigInteger celphone) {
         this.celphone = celphone;
     }
 

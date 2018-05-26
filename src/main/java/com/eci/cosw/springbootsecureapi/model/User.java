@@ -1,6 +1,7 @@
 package com.eci.cosw.springbootsecureapi.model;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 import java.util.List;
 
 import static javax.persistence.CascadeType.ALL;
@@ -16,8 +17,8 @@ public class User {
     private String password;
     private String firstname;
     private String lastname;
-    private int cel1;
-    private int cel2;
+    private BigInteger cel1;
+    private BigInteger cel2;
     private String username;
     private String logo;
     private String companyName;
@@ -37,7 +38,7 @@ public class User {
     }
 
     public User(String username, String email, String password, String firstname, String lastname, String logo,
-                String companyName, String companyAddres, Category category, int cel1, int cel2,
+                String companyName, String companyAddres, Category category, BigInteger cel1, BigInteger cel2,
                 String linkFacebook, String linkInstagram, String schedule, String linkTA, String linkGoogleMaps,
                 List<KeyWords> keyWords, Town town, Boolean tieneDatafono, Boolean tieneDomicilios) {
         this.username = username;
@@ -191,20 +192,20 @@ public class User {
     }
 
     @Column(name = "cel1", nullable = false)
-    public int getCel1() {
+    public BigInteger getCel1() {
         return cel1;
     }
 
-    public void setCel1(int cel1) {
+    public void setCel1(BigInteger cel1) {
         this.cel1 = cel1;
     }
 
     @Column(name = "cel2", nullable = false)
-    public int getCel2() {
+    public BigInteger getCel2() {
         return cel2;
     }
 
-    public void setCel2(int cel2) {
+    public void setCel2(BigInteger cel2) {
         this.cel2 = cel2;
     }
 
