@@ -120,7 +120,11 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.saveCategory = function (name) {
         sessionStorage.setItem("categoryName", name);
-        this.router.navigate(['/sites']);
+        this.router.navigate(['/loader']);
+        var that = this;
+        setTimeout(function () {
+            that.router.navigate(['/sites']);
+        }, 10);
     };
     return AppComponent;
 }());

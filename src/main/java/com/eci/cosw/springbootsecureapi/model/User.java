@@ -34,13 +34,16 @@ public class User {
     private Boolean tieneDomicilios;
     private Boolean tieneDatafono;
 
+    @Column(length=40)
+    private String descripcion;
+
     public User() {
     }
 
     public User(String username, String email, String password, String firstname, String lastname, String logo,
                 String companyName, String companyAddres, Category category, BigInteger cel1, BigInteger cel2,
                 String linkFacebook, String linkInstagram, String schedule, String linkTA, String linkGoogleMaps,
-                List<KeyWords> keyWords, Town town, Boolean tieneDatafono, Boolean tieneDomicilios) {
+                List<KeyWords> keyWords, Town town, Boolean tieneDatafono, Boolean tieneDomicilios, String descripcion) {
         this.username = username;
         this.email = email;
         this.password = password;
@@ -61,6 +64,7 @@ public class User {
         this.town = town;
         this.tieneDatafono=tieneDatafono;
         this.tieneDomicilios=tieneDomicilios;
+        this.descripcion=descripcion;
     }
 
 
@@ -227,7 +231,7 @@ public class User {
         this.linkInstagram = linkInstagram;
     }
 
-    @Column(name = "getSchedule", nullable = false)
+    @Column(name = "schedule", nullable = false)
     public String getSchedule() {
         return schedule;
     }
@@ -252,6 +256,15 @@ public class User {
 
     public void setLinkGoogleMaps(String linkGoogleMaps) {
         this.linkGoogleMaps = linkGoogleMaps;
+    }
+
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     @Override
