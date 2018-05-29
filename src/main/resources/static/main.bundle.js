@@ -633,7 +633,6 @@ var CategoryPageComponent = (function () {
         });
         this.townService.getTowns().subscribe(function (townsResponse) {
             _this.townList = townsResponse;
-            console.log(townsResponse);
             document.getElementById("loader3").remove();
         });
         this.usersService.getSites().subscribe(function (usersResponse) {
@@ -971,7 +970,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container{\n    position: relative;\n    width: 100%;\n    -ms-flex-line-pack: center;\n        align-content: center;\n    background-color: transparent;\n  }\n\n.card{\n      margin: 0 auto; /* Added */\n        float: none; /* Added */\n        margin-bottom: 10px; /* Added */\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\n    transition: 0.3s;\n}\n\n.internos{\n    padding: 10px 10px 10px 10px;\n\n}\n\n.card:hover {\n    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\n    background-color: #d1e0e0;\n}\n", ""]);
+exports.push([module.i, ".container{\n    position: relative;\n    width: 100%;\n    -ms-flex-line-pack: center;\n        align-content: center;\n    background-color: transparent;\n  }\n\n.card{\n      margin: 0 auto; /* Added */\n        float: none; /* Added */\n        margin-bottom: 10px; /* Added */\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\n    transition: 0.3s;\n}\n\n.internos{\n    padding: 10px 10px 10px 10px;\n\n}\n\n.card:hover {\n    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\n    background-color: #d1e0e0;\n}\n\n\n\n\n.dropdown {\n    position: center;\n    display: inline-block;\n}\n\n.dropdown-content {\n    display: none;\n    position: absolute;\n    background-color: white;\n    min-width: 150px;\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\n    padding: 5px;\n    z-index: 1;\n}\n\n.dropdown:hover .dropdown-content {\n    display: block;\n}\n\n\n\n\n.styleA{\n    background-color: grey;\n    color: white;\n    padding: 8px 15px;\n    text-aling: center;\n    text-decoration: none;\n    display: inline-block; /* Safari */\n    transition-duration: 0.9s;\n        cursor: pointer;\n\n}\n\n.styleA:hover {\n    background-color: white;\n    color: #0e6ebe;\n}\n\n.nav-link{ /* Safari */\n    transition-duration: 0.9s;\n        cursor: pointer;\n        color: black;\n}\n\n.nav-link:hover{\n    background-color: #d6d6c2;\n}", ""]);
 
 // exports
 
@@ -984,7 +983,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/search-site-page/search-site-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<br>\n<br>\n\n<div class=\"card\" style=\"width: 100%\">\n\n    <ul class=\"list-group list-group-flush\">\n        <li class=\"list-group-item\">Busqueda</li>\n        <li class=\"list-group-item\">\n            <div class=\"card-body\">\n                <div class=\"row\" >\n\n                    <div style=\" margin: 0 auto;\" id=\"loader\" class=\"loader\"></div>\n                    <div *ngFor=\"let ul of userslist\" class=\"col-xs-4\">\n\n                        <div class=\"card internos\" style=\"width: 260px\">\n                            <div class=\"card-body\">\n                                <img src=\"{{ul.logo}}\" width=\"120\" height=\"120\">\n                                <a (click)=\"saveSite(ul.companyName, ul.username)\" routerLinkActive=\"/siteProfile\" routerLink=\"/siteProfile\"  class=\"btn btn1\">\n                                    Ver</a>\n                            </div>\n                        </div>\n                    </div>\n\n                </div>\n            </div>\n        </li>\n    </ul>\n\n\n</div>\n<font size=\"3\" color=\"red\">{{errorText}}</font>\n\n"
+module.exports = "<br>\n<br>\n\n<div class=\"row\">\n\n    <form [formGroup]=\"searchForm\" (ngSubmit)=\"searchSite()\" class=\"form-inline\">\n\n        &nbsp;\n        <div class=\"input-group\">\n            <input type=\"text\" class=\"form-control\" formControlName=\"inputSearch\" placeholder=\"Buscar\" >\n            <button type=\"submit\" class=\"btn-success\" [disabled]=\"!searchForm.valid\">Buscar</button>\n        </div>\n    </form>\n\n    &nbsp;&nbsp;&nbsp;&nbsp;\n    <div class=\"dropdown\">\n\n            <span class=\"styleA\"><img class=\"image\" src=\"/assets/images/location.svg\" width=\"19\" height=\"19\">\n                {{textTowns}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n                <img class=\"image\" src=\"/assets/images/down.svg\" width=\"19\" height=\"19\"></span>\n        <div class=\"dropdown-content\">\n            <div style=\" margin: 0 auto;\" id=\"loader3\" class=\"loader\"></div>\n            <a class=\"nav-link\" (click)=\"searchTown(town.name)\"  *ngFor=\"let town of townList\">{{town.name}}</a>\n        </div>\n\n    </div>\n</div>\n<hr>\n\n\n<div class=\"card\" style=\"width: 100%\">\n\n    <ul class=\"list-group list-group-flush\">\n        <li class=\"list-group-item\">Busqueda</li>\n        <li class=\"list-group-item\">\n            <div class=\"card-body\">\n                <div class=\"row\" >\n\n                    <div style=\" margin: 0 auto;\" id=\"loader\" class=\"loader\"></div>\n                    <div *ngFor=\"let ul of userslist\" class=\"col-xs-4\">\n\n                        <div class=\"card internos\" style=\"width: 260px\">\n                            <div class=\"card-body\">\n                                <img src=\"{{ul.logo}}\" width=\"120\" height=\"120\">\n                                <a (click)=\"saveSite(ul.companyName, ul.username)\" routerLinkActive=\"/siteProfile\" routerLink=\"/siteProfile\"  class=\"btn btn1\">\n                                    Ver</a>\n                            </div>\n                        </div>\n                    </div>\n\n                </div>\n            </div>\n        </li>\n    </ul>\n\n\n</div>\n<font size=\"3\" color=\"red\">{{errorText}}</font>\n\n"
 
 /***/ }),
 
@@ -996,6 +995,8 @@ module.exports = "<br>\n<br>\n\n<div class=\"card\" style=\"width: 100%\">\n\n  
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_town_service__ = __webpack_require__("../../../../../src/app/services/town.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1008,9 +1009,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var SearchSitePageComponent = (function () {
-    function SearchSitePageComponent(usersService, router) {
+    function SearchSitePageComponent(usersService, townService, router) {
         this.usersService = usersService;
+        this.townService = townService;
         this.router = router;
         this.userslist = [];
     }
@@ -1030,10 +1034,37 @@ var SearchSitePageComponent = (function () {
                 _this.errorText = "";
             }
         });
+        var data1 = sessionStorage.getItem("searchTown");
+        if (data1 == null) {
+            this.textTowns = "Ciudades";
+        }
+        else {
+            this.textTowns = data1;
+        }
+        this.searchForm = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* FormGroup */]({
+            inputSearch: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]()
+        });
+        this.townService.getTowns().subscribe(function (townsResponse) {
+            _this.townList = townsResponse;
+            document.getElementById("loader3").remove();
+        });
     };
     SearchSitePageComponent.prototype.saveSite = function (name, username) {
         sessionStorage.setItem("siteName", name);
         sessionStorage.setItem("siteUsername", username);
+    };
+    SearchSitePageComponent.prototype.searchSite = function () {
+        var data = this.searchForm.get('inputSearch').value;
+        sessionStorage.setItem("searchSite", data);
+        this.router.navigate(['/loader']);
+        var that = this;
+        setTimeout(function () {
+            that.router.navigate(['/searchSite']);
+        }, 100);
+    };
+    SearchSitePageComponent.prototype.searchTown = function (townName) {
+        this.textTowns = townName;
+        sessionStorage.setItem("searchTown", townName);
     };
     return SearchSitePageComponent;
 }());
@@ -1043,10 +1074,10 @@ SearchSitePageComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/pages/search-site-page/search-site-page.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pages/search-site-page/search-site-page.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_town_service__["a" /* TownService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_town_service__["a" /* TownService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _c || Object])
 ], SearchSitePageComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=search-site-page.component.js.map
 
 /***/ }),
