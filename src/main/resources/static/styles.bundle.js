@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "body {\n  min-height: 75rem;\n  padding-top: 4.5rem;\n}\n\n\n.loader {\n  border: 5px solid #f3f3f3;\n  border-radius: 50%;\n  border-top: 5px solid blue;\n  border-right: 5px solid green;\n  width: 50px;\n  height: 50px;\n  -webkit-animation: spin 0.3s linear infinite;\n  animation: spin 0.3s linear infinite;\n}\n\n@-webkit-keyframes spin {\n  0% { -webkit-transform: rotate(0deg); }\n  100% { -webkit-transform: rotate(360deg); }\n}\n\n@keyframes spin {\n  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}\n", ""]);
+exports.push([module.i, "body {\n  min-height: 75rem;\n  padding-top: 4.5rem;\n  width:100%;\n}\n\n\n.loader {\n  border: 5px solid #f3f3f3;\n  border-radius: 50%;\n  border-top: 5px solid blue;\n  border-right: 5px solid green;\n  width: 50px;\n  height: 50px;\n  -webkit-animation: spin 0.3s linear infinite;\n  animation: spin 0.3s linear infinite;\n}\n\n@-webkit-keyframes spin {\n  0% { -webkit-transform: rotate(0deg); }\n  100% { -webkit-transform: rotate(360deg); }\n}\n\n@keyframes spin {\n  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}\n", ""]);
 
 // exports
 
